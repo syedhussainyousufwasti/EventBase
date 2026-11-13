@@ -1,0 +1,31 @@
+{
+  "events": [
+    {
+      "testId": "EV-01",
+      "title": "Tech Summit 2026",
+      "description": "Premier technology conference for developers.",
+      "venue": "Sizabist Auditorium",
+      "venueOption": "Sizabist Auditorium (200 Seats)",
+      "date": "2026-09-15",
+      "totalSeats": 200
+    },
+    {
+      "testId": "EV-02",
+      "title": "Board Strategy Session",
+      "description": "Quarterly executive strategy meeting.",
+      "venue": "Executive Boardroom",
+      "venueOption": "Executive Boardroom (50 Seats)",
+      "date": "2026-08-20",
+      "totalSeats": 50
+    },
+    {
+      "testId": "EV-03",
+      "title": "Annual Campus Gala",
+      "description": "University-wide celebration and awards ceremony.",
+      "venue": "Main Campus Hall",
+      "venueOption": "Main Campus Hall (500 Seats)",
+      "date": "2026-12-01",
+      "totalSeats": 500
+    }
+  ]
+}

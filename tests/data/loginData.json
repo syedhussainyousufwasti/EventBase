@@ -1,0 +1,57 @@
+{
+  "validUsers": [
+    {
+      "testId": "LG-01",
+      "description": "Valid manager login",
+      "email": "arbaaz@eventbase.com",
+      "password": "Arbaaz@1234",
+      "role": "manager",
+      "expectedRedirect": "/events"
+    },
+    {
+      "testId": "LG-02",
+      "description": "Valid regular user login",
+      "email": "testuser@eventbase.com",
+      "password": "Test@1234",
+      "role": "user",
+      "expectedRedirect": "/events"
+    }
+  ],
+  "invalidUsers": [
+    {
+      "testId": "LG-03",
+      "description": "Wrong password",
+      "email": "arbaaz@eventbase.com",
+      "password": "wrongpass",
+      "expectedError": "Access Denied"
+    },
+    {
+      "testId": "LG-04",
+      "description": "Unregistered email",
+      "email": "notexist@fake.com",
+      "password": "Test@1234",
+      "expectedError": "Access Denied"
+    },
+    {
+      "testId": "LG-05",
+      "description": "Empty email and password",
+      "email": "",
+      "password": "",
+      "expectedError": "validation"
+    },
+    {
+      "testId": "LG-06",
+      "description": "Empty password only",
+      "email": "arbaaz@eventbase.com",
+      "password": "",
+      "expectedError": "validation"
+    },
+    {
+      "testId": "LG-07",
+      "description": "Invalid email format",
+      "email": "notanemail",
+      "password": "Test@1234",
+      "expectedError": "validation"
+    }
+  ]
+}

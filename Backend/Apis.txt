@@ -1,0 +1,184 @@
+1️⃣ Signup (Create User)
+
+URL:
+
+POST http://localhost:5000/api/auth/signup
+
+
+Body → raw → JSON
+
+{
+  "name": "Arbaaz Hussain",
+  "email": "arbaaz@test.com",
+  "password": "123456"
+}
+
+
+Response:
+
+{
+  "message": "User Registered Successfully!"
+}
+
+2️⃣ Login (Authenticate User + Get Token)
+
+URL:
+
+POST http://localhost:5000/api/auth/login
+
+
+Body → raw → JSON
+
+{
+  "email": "arbaaz@test.com",
+  "password": "123456"
+}
+
+
+Response:
+
+{
+  "message": "Login successful",
+  "token": "<JWT_TOKEN_HERE>"
+}
+
+
+⚠️ Ye token aage Events CRUD ke liye zaruri hai.
+
+3️⃣ Create Event
+
+URL:
+
+POST http://localhost:5000/api/Events
+
+
+Headers:
+
+Authorization: Bearer <JWT_TOKEN_HERE>
+
+
+Body → raw → JSON
+
+{
+  "title": "Tech Meetup",
+  "description": "A meetup about AI and ML",
+  "date": "2025-01-20",
+  "venue": "SZABIST Auditorium",
+  "availableSeats": 100,
+  "totalSeats": 100
+}
+
+
+Response:
+
+{
+  "message": "Event created successfully",
+  "event": { ...event object... }
+}
+
+4️⃣ Get All Events
+
+URL:
+
+GET http://localhost:5000/api/Events
+
+
+Headers:
+
+Authorization: Bearer <JWT_TOKEN_HERE>
+
+
+Response:
+
+[
+  {
+    "_id": "...",
+    "title": "Tech Meetup",
+    "description": "A meetup about AI and ML",
+    "date": "2025-01-20T00:00:00.000Z",
+    "venue": "SZABIST Auditorium",
+    "availableSeats": 100,
+    "totalSeats": 100
+  }
+]
+
+5️⃣ Get Single Event
+
+URL:
+
+GET http://localhost:5000/api/Events/<eventId>
+
+
+Headers:
+
+Authorization: Bearer <JWT_TOKEN_HERE>
+
+
+Response:
+
+{
+  "_id": "...",
+  "title": "Tech Meetup",
+  "description": "A meetup about AI and ML",
+  "date": "2025-01-20T00:00:00.000Z",
+  "venue": "SZABIST Auditorium",
+  "availableSeats": 100,
+  "totalSeats": 100
+}
+
+6️⃣ Update Event
+
+URL:
+
+PUT http://localhost:5000/api/Events/<eventId>
+
+
+Headers:
+
+Authorization: Bearer <JWT_TOKEN_HERE>
+
+
+Body → raw → JSON
+
+{
+  "title": "Tech Meetup Updated",
+  "description": "Updated discussion",
+  "availableSeats": 90
+}
+
+
+Response:
+
+{
+  "message": "Event updated successfully",
+  "event": { ...updated event object... }
+}
+
+7️⃣ Delete Event
+
+URL:
+
+DELETE http://localhost:5000/api/Events/<eventId>
+
+
+Headers:
+
+Authorization: Bearer <JWT_TOKEN_HERE>
+
+
+Response:
+
+{
+  "message": "Event deleted successfully!"
+}
+
+
+💡 Summary Notes for Subha Presentation:
+
+Signup + Login → create user + token
+
+Token → sab Event CRUD ke headers me mandatory
+
+CRUD → Create, Read (all/single), Update, Delete events
+
+Case sensitive → /Events not /events

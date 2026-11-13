@@ -1,0 +1,8 @@
+npx playwright test --headed
+npx playwright test tests/signup/signup.test.js --headed
+npx playwright test -g "TC-11"
+
+npx playwright show-report reports\html-report
+
+npx allure generate allure-results --clean -o allure-report
+npx allure open allure-report
